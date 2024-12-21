@@ -1,6 +1,6 @@
 # Intensivstation (ITS) Manager
 
-![alt text](https://github.com/morten1982/crossCobra/blob/master/ITS-Manager-git.png)
+![alt text](https://github.com/morten1982/ITS-Manager/blob/master/ITS-Manager-git.png)
 
 # Beschreibung
 PyQt5 Tabllenanwendung als Übersicht der täglichen Aufgaben einer Intensivstation für ein Krankenhaus
