@@ -22,7 +22,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         
         self.master = parent
-        self.setWindowTitle('Intensivstation DRK Krankenhaus Neustrelitz')
+        self.setWindowTitle('Intensivstation')
         self.path = self.getPath()
         self.setWindowIcon(QIcon(self.path + 'ITS-Manager.png'))
         self.initUI()
