@@ -89,7 +89,7 @@ class MainWindow(QMainWindow):
         self.setFullscreen = QShortcut(QKeySequence("F5"), self)
         self.setFullscreen.activated.connect(self.toggleFullScreen)
         
-        font = QFont("Arial", 18)
+        font = QFont("Arial", 17)
         
         self.timer1 = QTimer()
         self.timer1.setInterval(1000) # 1000 ms
@@ -143,9 +143,9 @@ class MainWindow(QMainWindow):
         self.table1.setFont(font)
         
         self.table1.setRowCount(24);
-        self.table1.setColumnCount(7);
+        self.table1.setColumnCount(6);
         
-        header_labels = ['        CAVE        ', 'Abteilung', 'Pflegekraft', '        Arzt       ', 'Fon', '       Aufgaben       ', '     Kostform     ']
+        header_labels = ['        CAVE        ', 'Abteilung', 'Pflegekraft', '        Arzt       ', '       Aufgaben       ', '     Kostform     ']
         self.table1.setHorizontalHeaderLabels(header_labels)
         
         self.table1.resizeRowsToContents();
@@ -156,7 +156,7 @@ class MainWindow(QMainWindow):
         #self.table1.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         
         # colorize gray
-        for i in range(7):
+        for i in range(6):
             self.set_BG_Gray(self.table1, 0, i)
             self.set_BG_Gray(self.table1, 1, i)
             self.set_BG_Gray(self.table1, 2, i)
@@ -174,7 +174,7 @@ class MainWindow(QMainWindow):
             self.set_BG_Gray(self.table1, 20, i)
 
         # colorize white
-        for i in range(7):
+        for i in range(6):
             self.set_BG_White(self.table1, 3, i)
             self.set_BG_White(self.table1, 4, i)
             self.set_BG_White(self.table1, 5, i)
@@ -464,13 +464,15 @@ class MainWindow(QMainWindow):
         self.table1.setCellWidget(0, 3, self.combo_arzt_1)
         
         self.combo_aufgaben_01 = self.makeComboBox(self.aufgaben, (238,238,238), (0,0,255))
-        self.table1.setCellWidget(0, 5, self.combo_aufgaben_01)   
+        self.table1.setCellWidget(0, 4, self.combo_aufgaben_01)   
         
         self.combo_aufgaben_02 = self.makeComboBox(self.aufgaben, (238,238,238), (0,0,255))
-        self.table1.setCellWidget(1, 5, self.combo_aufgaben_02)   
+        self.table1.setCellWidget(1, 4, self.combo_aufgaben_02)   
 
         self.combo_kostform_01 = self.makeComboBox(self.kostform, (238,238,238))
-        self.table1.setCellWidget(0, 6, self.combo_kostform_01)            
+        self.table1.setCellWidget(0, 5, self.combo_kostform_01)            
+        
+        ## ---- to do ----
         
         
         ##
@@ -492,15 +494,15 @@ class MainWindow(QMainWindow):
         self.table1.setCellWidget(3, 3, self.combo_arzt_21)
 
         self.combo_aufgaben_21_01 = self.makeComboBox(self.aufgaben, (255,255,255), (0,0,255))
-        self.table1.setCellWidget(3, 5, self.combo_aufgaben_21_01)
+        self.table1.setCellWidget(3, 4, self.combo_aufgaben_21_01)
         
         self.combo_aufgaben_21_02 = self.makeComboBox(self.aufgaben, (255,255,255), (0,0,255))
-        self.table1.setCellWidget(4, 5, self.combo_aufgaben_21_02)
+        self.table1.setCellWidget(4, 4, self.combo_aufgaben_21_02)
 
         self.combo_kostform_21 = self.makeComboBox(self.kostform, (255,255,255))
-        self.table1.setCellWidget(3, 6, self.combo_kostform_21)            
+        self.table1.setCellWidget(3, 5, self.combo_kostform_21)            
         
-        ## ---- to do ----
+        
         
         ##
         # Raum 2.2
@@ -521,13 +523,13 @@ class MainWindow(QMainWindow):
         self.table1.setCellWidget(6, 3, self.combo_arzt_22)
 
         self.combo_aufgaben_22_01 = self.makeComboBox(self.aufgaben, (238,238, 238), (0,0,255))
-        self.table1.setCellWidget(6, 5, self.combo_aufgaben_22_01)
+        self.table1.setCellWidget(6, 4, self.combo_aufgaben_22_01)
 
         self.combo_aufgaben_22_02 = self.makeComboBox(self.aufgaben, (238,238, 238), (0,0,255))
-        self.table1.setCellWidget(7, 5, self.combo_aufgaben_22_02)
+        self.table1.setCellWidget(7, 4, self.combo_aufgaben_22_02)
 
         self.combo_kostform_22 = self.makeComboBox(self.kostform, (238,238,238))
-        self.table1.setCellWidget(6, 6, self.combo_kostform_22)            
+        self.table1.setCellWidget(6, 5, self.combo_kostform_22)            
 
         ##
         # Raum 3
@@ -548,13 +550,13 @@ class MainWindow(QMainWindow):
         self.table1.setCellWidget(9, 3, self.combo_arzt_3)
 
         self.combo_aufgaben_3_01 = self.makeComboBox(self.aufgaben, (255,255,255), (0,0,255))
-        self.table1.setCellWidget(9, 5, self.combo_aufgaben_3_01)
+        self.table1.setCellWidget(9, 4, self.combo_aufgaben_3_01)
 
         self.combo_aufgaben_3_02 = self.makeComboBox(self.aufgaben, (255,255,255), (0,0,255))
-        self.table1.setCellWidget(10, 5, self.combo_aufgaben_3_02)
+        self.table1.setCellWidget(10, 4, self.combo_aufgaben_3_02)
         
         self.combo_kostform_3 = self.makeComboBox(self.kostform, (255,255,255))
-        self.table1.setCellWidget(9, 6, self.combo_kostform_3)  
+        self.table1.setCellWidget(9, 5, self.combo_kostform_3)  
 
         ##
         # Raum 4.1
@@ -575,13 +577,13 @@ class MainWindow(QMainWindow):
         self.table1.setCellWidget(12, 3, self.combo_arzt_41)
 
         self.combo_aufgaben_41_01 = self.makeComboBox(self.aufgaben, (238,238, 238), (0,0,255))
-        self.table1.setCellWidget(12, 5, self.combo_aufgaben_41_01)
+        self.table1.setCellWidget(12, 4, self.combo_aufgaben_41_01)
 
         self.combo_aufgaben_41_02 = self.makeComboBox(self.aufgaben, (238,238, 238), (0,0,255))
-        self.table1.setCellWidget(13, 5, self.combo_aufgaben_41_02)
+        self.table1.setCellWidget(13, 4, self.combo_aufgaben_41_02)
 
         self.combo_kostform_41 = self.makeComboBox(self.kostform, (238,238,238))
-        self.table1.setCellWidget(12, 6, self.combo_kostform_41)  
+        self.table1.setCellWidget(12, 5, self.combo_kostform_41)  
 
         ##
         # Raum 4.2
@@ -602,13 +604,13 @@ class MainWindow(QMainWindow):
         self.table1.setCellWidget(15, 3, self.combo_arzt_42)
 
         self.combo_aufgaben_42_01 = self.makeComboBox(self.aufgaben, (255,255,255), (0,0,255))
-        self.table1.setCellWidget(15, 5, self.combo_aufgaben_42_01)
+        self.table1.setCellWidget(15, 4, self.combo_aufgaben_42_01)
 
         self.combo_aufgaben_42_02 = self.makeComboBox(self.aufgaben, (255,255,255), (0,0,255))
-        self.table1.setCellWidget(16, 5, self.combo_aufgaben_42_02)
+        self.table1.setCellWidget(16, 4, self.combo_aufgaben_42_02)
 
         self.combo_kostform_42 = self.makeComboBox(self.kostform, (255,255,255))
-        self.table1.setCellWidget(15, 6, self.combo_kostform_42) 
+        self.table1.setCellWidget(15, 5, self.combo_kostform_42) 
 
         ##
         # Raum 5
@@ -629,13 +631,13 @@ class MainWindow(QMainWindow):
         self.table1.setCellWidget(18, 3, self.combo_arzt_5)
 
         self.combo_aufgaben_5_01 = self.makeComboBox(self.aufgaben, (238,238, 238), (0,0,255))
-        self.table1.setCellWidget(18, 5, self.combo_aufgaben_5_01)
+        self.table1.setCellWidget(18, 4, self.combo_aufgaben_5_01)
 
         self.combo_aufgaben_5_02 = self.makeComboBox(self.aufgaben, (238,238, 238), (0,0,255))
-        self.table1.setCellWidget(19, 5, self.combo_aufgaben_5_02)
+        self.table1.setCellWidget(19, 4, self.combo_aufgaben_5_02)
 
         self.combo_kostform_5 = self.makeComboBox(self.kostform, (238,238,238))
-        self.table1.setCellWidget(18, 6, self.combo_kostform_5)  
+        self.table1.setCellWidget(18, 5, self.combo_kostform_5)  
 
         ##
         # Raum 6
@@ -656,13 +658,13 @@ class MainWindow(QMainWindow):
         self.table1.setCellWidget(21, 3, self.combo_arzt_6)
 
         self.combo_aufgaben_6_01 = self.makeComboBox(self.aufgaben, (255,255,255), (0,0,255))
-        self.table1.setCellWidget(21, 5, self.combo_aufgaben_6_01)
+        self.table1.setCellWidget(21, 4, self.combo_aufgaben_6_01)
 
         self.combo_aufgaben_6_02 = self.makeComboBox(self.aufgaben, (255,255,255), (0,0,255))
-        self.table1.setCellWidget(22, 5, self.combo_aufgaben_6_02)
+        self.table1.setCellWidget(22, 4, self.combo_aufgaben_6_02)
 
         self.combo_kostform_6 = self.makeComboBox(self.kostform, (255,255,255))
-        self.table1.setCellWidget(21, 6, self.combo_kostform_6) 
+        self.table1.setCellWidget(21, 5, self.combo_kostform_6) 
 
         ###
         # self.table2
@@ -1476,14 +1478,7 @@ class MainWindow(QMainWindow):
             l_0.append(text)
         else:
             l_0.append('')
-    
-        
-        item = self.table1.item(0, 4)
-        text = item.text()
-        if text:
-            l_0.append(text)
-        else:
-            l_0.append('')    
+     
     
         text = self.combo_aufgaben_01.lineEdit().text()
         if text:
@@ -1529,13 +1524,7 @@ class MainWindow(QMainWindow):
             l_1.append(text)
         else:
             l_1.append('')   
-        
-        item = self.table1.item(1, 4)
-        text = item.text()
-        if text:
-            l_1.append(text)
-        else:
-            l_1.append('')    
+         
         
         text = self.combo_aufgaben_02.lineEdit().text()
         if text:
@@ -1543,6 +1532,12 @@ class MainWindow(QMainWindow):
         else:
             l_1.append('')
         
+        item = self.table1.item(1, 5)
+        text = item.text()
+        if text:
+            l_1.append(text)
+        else:
+            l_1.append('') 
 
         l_2 = []
 
@@ -1574,13 +1569,13 @@ class MainWindow(QMainWindow):
             l_2.append(text)
         else:
             l_2.append('')   
-            
+         
         item = self.table1.item(2, 4)
         text = item.text()
         if text:
             l_2.append(text)
         else:
-            l_2.append('')   
+            l_2.append('')     
             
         item = self.table1.item(2, 5)
         text = item.text()
@@ -1621,12 +1616,6 @@ class MainWindow(QMainWindow):
             l_3.append('')
     
         
-        item = self.table1.item(3, 4)
-        text = item.text()
-        if text:
-            l_3.append(text)
-        else:
-            l_3.append('')    
     
         text = self.combo_aufgaben_21_01.lineEdit().text()
         if text:
@@ -1671,13 +1660,7 @@ class MainWindow(QMainWindow):
             l_4.append(text)
         else:
             l_4.append('')   
-        
-        item = self.table1.item(4, 4)
-        text = item.text()
-        if text:
-            l_4.append(text)
-        else:
-            l_4.append('')    
+       
         
         text = self.combo_aufgaben_21_02.lineEdit().text()
         if text:
@@ -1685,6 +1668,12 @@ class MainWindow(QMainWindow):
         else:
             l_4.append('')
         
+        item = self.table1.item(4, 5)
+        text = item.text()
+        if text:
+            l_4.append(text)
+        else:
+            l_4.append('')  
 
         l_5 = []
 
@@ -1716,13 +1705,13 @@ class MainWindow(QMainWindow):
             l_5.append(text)
         else:
             l_5.append('')   
-            
+        
         item = self.table1.item(5, 4)
         text = item.text()
         if text:
             l_5.append(text)
         else:
-            l_5.append('')   
+            l_5.append('')      
             
         item = self.table1.item(5, 5)
         text = item.text()
@@ -1761,13 +1750,7 @@ class MainWindow(QMainWindow):
         else:
             l_6.append('')
     
-        
-        item = self.table1.item(6, 4)
-        text = item.text()
-        if text:
-            l_6.append(text)
-        else:
-            l_6.append('')    
+         
     
         text = self.combo_aufgaben_22_01.lineEdit().text()
         if text:
@@ -1810,13 +1793,7 @@ class MainWindow(QMainWindow):
             l_7.append(text)
         else:
             l_7.append('')   
-        
-        item = self.table1.item(7, 4)
-        text = item.text()
-        if text:
-            l_7.append(text)
-        else:
-            l_7.append('')    
+         
         
         text = self.combo_aufgaben_22_02.lineEdit().text()
         if text:
@@ -1824,6 +1801,12 @@ class MainWindow(QMainWindow):
         else:
             l_7.append('')
         
+        item = self.table1.item(7, 5)
+        text = item.text()
+        if text:
+            l_7.append(text)
+        else:
+            l_7.append('')  
 
         l_8 = []
 
@@ -1855,13 +1838,13 @@ class MainWindow(QMainWindow):
             l_8.append(text)
         else:
             l_8.append('')   
-            
+        
         item = self.table1.item(8, 4)
         text = item.text()
         if text:
             l_8.append(text)
         else:
-            l_8.append('')   
+            l_8.append('')      
             
         item = self.table1.item(8, 5)
         text = item.text()
@@ -1900,14 +1883,7 @@ class MainWindow(QMainWindow):
             l_9.append(text)
         else:
             l_9.append('')
-    
-        
-        item = self.table1.item(9, 4)
-        text = item.text()
-        if text:
-            l_9.append(text)
-        else:
-            l_9.append('')    
+     
     
         text = self.combo_aufgaben_3_01.lineEdit().text()
         if text:
@@ -1950,13 +1926,7 @@ class MainWindow(QMainWindow):
             l_10.append(text)
         else:
             l_10.append('')   
-        
-        item = self.table1.item(10, 4)
-        text = item.text()
-        if text:
-            l_10.append(text)
-        else:
-            l_10.append('')    
+         
         
         text = self.combo_aufgaben_3_02.lineEdit().text()
         if text:
@@ -1964,6 +1934,12 @@ class MainWindow(QMainWindow):
         else:
             l_10.append('')
         
+        item = self.table1.item(10, 5)
+        text = item.text()
+        if text:
+            l_10.append(text)
+        else:
+            l_10.append('')  
 
         l_11 = []
 
@@ -1995,13 +1971,13 @@ class MainWindow(QMainWindow):
             l_11.append(text)
         else:
             l_11.append('')   
-            
+        
         item = self.table1.item(11, 4)
         text = item.text()
         if text:
             l_11.append(text)
         else:
-            l_11.append('')   
+            l_11.append('')     
             
         item = self.table1.item(11, 5)
         text = item.text()
@@ -2040,13 +2016,7 @@ class MainWindow(QMainWindow):
         else:
             l_12.append('')
     
-        
-        item = self.table1.item(12, 4)
-        text = item.text()
-        if text:
-            l_12.append(text)
-        else:
-            l_12.append('')    
+          
     
         text = self.combo_aufgaben_41_01.lineEdit().text()
         if text:
@@ -2089,13 +2059,7 @@ class MainWindow(QMainWindow):
             l_13.append(text)
         else:
             l_13.append('')   
-        
-        item = self.table1.item(13, 4)
-        text = item.text()
-        if text:
-            l_13.append(text)
-        else:
-            l_13.append('')    
+       
         
         text = self.combo_aufgaben_41_02.lineEdit().text()
         if text:
@@ -2103,6 +2067,13 @@ class MainWindow(QMainWindow):
         else:
             l_13.append('')
         
+        
+        item = self.table1.item(13, 5)
+        text = item.text()
+        if text:
+            l_13.append(text)
+        else:
+            l_13.append('')  
 
         l_14 = []
 
@@ -2134,7 +2105,7 @@ class MainWindow(QMainWindow):
             l_14.append(text)
         else:
             l_14.append('')   
-            
+        
         item = self.table1.item(14, 4)
         text = item.text()
         if text:
@@ -2178,14 +2149,7 @@ class MainWindow(QMainWindow):
             l_15.append(text)
         else:
             l_15.append('')
-    
-        
-        item = self.table1.item(15, 4)
-        text = item.text()
-        if text:
-            l_15.append(text)
-        else:
-            l_15.append('')    
+     
     
         text = self.combo_aufgaben_42_01.lineEdit().text()
         if text:
@@ -2229,12 +2193,6 @@ class MainWindow(QMainWindow):
         else:
             l_16.append('')   
         
-        item = self.table1.item(16, 4)
-        text = item.text()
-        if text:
-            l_16.append(text)
-        else:
-            l_16.append('')    
         
         text = self.combo_aufgaben_42_02.lineEdit().text()
         if text:
@@ -2242,6 +2200,12 @@ class MainWindow(QMainWindow):
         else:
             l_16.append('')
         
+        item = self.table1.item(16, 5)
+        text = item.text()
+        if text:
+            l_16.append(text)
+        else:
+            l_16.append('')  
 
         l_17 = []
 
@@ -2273,13 +2237,14 @@ class MainWindow(QMainWindow):
             l_17.append(text)
         else:
             l_17.append('')   
-            
+         
+        
         item = self.table1.item(17, 4)
         text = item.text()
         if text:
             l_17.append(text)
         else:
-            l_17.append('')   
+            l_17.append('')     
             
         item = self.table1.item(17, 5)
         text = item.text()
@@ -2318,13 +2283,6 @@ class MainWindow(QMainWindow):
         else:
             l_18.append('')
     
-        
-        item = self.table1.item(18, 4)
-        text = item.text()
-        if text:
-            l_18.append(text)
-        else:
-            l_18.append('')    
     
         text = self.combo_aufgaben_5_01.lineEdit().text()
         if text:
@@ -2368,12 +2326,6 @@ class MainWindow(QMainWindow):
         else:
             l_19.append('')   
         
-        item = self.table1.item(19, 4)
-        text = item.text()
-        if text:
-            l_19.append(text)
-        else:
-            l_19.append('')    
         
         text = self.combo_aufgaben_5_02.lineEdit().text()
         if text:
@@ -2381,7 +2333,14 @@ class MainWindow(QMainWindow):
         else:
             l_19.append('')
         
-
+        
+        item = self.table1.item(19, 5)
+        text = item.text()
+        if text:
+            l_19.append(text)
+        else:
+            l_19.append('')  
+        
         l_20 = []
 
         
@@ -2412,13 +2371,13 @@ class MainWindow(QMainWindow):
             l_20.append(text)
         else:
             l_20.append('')   
-            
+        
         item = self.table1.item(20, 4)
         text = item.text()
         if text:
             l_20.append(text)
         else:
-            l_20.append('')   
+            l_20.append('')      
             
         item = self.table1.item(20, 5)
         text = item.text()
@@ -2457,13 +2416,6 @@ class MainWindow(QMainWindow):
         else:
             l_21.append('')
     
-        
-        item = self.table1.item(21, 4)
-        text = item.text()
-        if text:
-            l_21.append(text)
-        else:
-            l_21.append('')    
     
         text = self.combo_aufgaben_6_01.lineEdit().text()
         if text:
@@ -2506,13 +2458,7 @@ class MainWindow(QMainWindow):
             l_22.append(text)
         else:
             l_22.append('')   
-        
-        item = self.table1.item(22, 4)
-        text = item.text()
-        if text:
-            l_22.append(text)
-        else:
-            l_22.append('')    
+      
         
         text = self.combo_aufgaben_6_02.lineEdit().text()
         if text:
@@ -2520,6 +2466,12 @@ class MainWindow(QMainWindow):
         else:
             l_22.append('')
         
+        item = self.table1.item(22, 5)
+        text = item.text()
+        if text:
+            l_22.append(text)
+        else:
+            l_22.append('')  
 
         l_23 = []
 
@@ -2551,13 +2503,13 @@ class MainWindow(QMainWindow):
             l_23.append(text)
         else:
             l_23.append('')   
-            
+        
         item = self.table1.item(23, 4)
         text = item.text()
         if text:
             l_23.append(text)
         else:
-            l_23.append('')   
+            l_23.append('')     
             
         item = self.table1.item(23, 5)
         text = item.text()
@@ -2616,10 +2568,8 @@ class MainWindow(QMainWindow):
         self.combo_abteilung_1.lineEdit().setText(tab0[1])
         self.combo_pflege_1.lineEdit().setText(tab0[2])
         self.combo_arzt_1.lineEdit().setText(tab0[3])
-        item = self.table1.item(0, 4)
-        item.setText(tab0[4])
-        self.combo_aufgaben_01.lineEdit().setText(tab0[5])
-        self.combo_kostform_01.lineEdit().setText(tab0[6])
+        self.combo_aufgaben_01.lineEdit().setText(tab0[4])
+        self.combo_kostform_01.lineEdit().setText(tab0[5])
         
         ##
         # tab1
@@ -2631,9 +2581,9 @@ class MainWindow(QMainWindow):
         item.setText(tab1[2])
         item = self.table1.item(1, 3)
         item.setText(tab1[3])
-        item = self.table1.item(1, 4)
-        item.setText(tab1[4])
-        self.combo_aufgaben_02.lineEdit().setText(tab1[5])
+        self.combo_aufgaben_02.lineEdit().setText(tab1[4])
+        item = self.table1.item(1, 5)
+        item.setText(tab1[5])
         
         ##
         # tab2
@@ -2647,9 +2597,9 @@ class MainWindow(QMainWindow):
         item = self.table1.item(2, 3)
         item.setText(tab2[3])
         item = self.table1.item(2, 4)
-        item.setText(tab2[4])
+        item.setText(tab2[3])
         item = self.table1.item(2, 5)
-        item.setText(tab2[5])
+        item.setText(tab2[4])
 
         ##
         # tab3
@@ -2658,10 +2608,8 @@ class MainWindow(QMainWindow):
         self.combo_abteilung_21.lineEdit().setText(tab3[1])
         self.combo_pflege_21.lineEdit().setText(tab3[2])
         self.combo_arzt_21.lineEdit().setText(tab3[3])
-        item = self.table1.item(3, 4)
-        item.setText(tab3[4])
-        self.combo_aufgaben_21_01.lineEdit().setText(tab3[5])
-        self.combo_kostform_21.lineEdit().setText(tab3[6])
+        self.combo_aufgaben_21_01.lineEdit().setText(tab3[4])
+        self.combo_kostform_21.lineEdit().setText(tab3[5])
         
         ##
         # tab4
@@ -2673,9 +2621,10 @@ class MainWindow(QMainWindow):
         item.setText(tab4[2])
         item = self.table1.item(4, 3)
         item.setText(tab4[3])
-        item = self.table1.item(4, 4)
-        item.setText(tab4[4])
-        self.combo_aufgaben_21_02.lineEdit().setText(tab4[5])
+        self.combo_aufgaben_21_02.lineEdit().setText(tab4[4])
+        item = self.table1.item(4, 5)
+        item.setText(tab4[5])
+        
         ##
         # tab5
         ##
@@ -2691,7 +2640,7 @@ class MainWindow(QMainWindow):
         item.setText(tab5[4])
         item = self.table1.item(5, 5)
         item.setText(tab5[5])
-
+        
         ##
         # tab6
         ##
@@ -2699,10 +2648,8 @@ class MainWindow(QMainWindow):
         self.combo_abteilung_22.lineEdit().setText(tab6[1])
         self.combo_pflege_22.lineEdit().setText(tab6[2])
         self.combo_arzt_22.lineEdit().setText(tab6[3])
-        item = self.table1.item(6, 4)
-        item.setText(tab6[4])
-        self.combo_aufgaben_22_01.lineEdit().setText(tab6[5])
-        self.combo_kostform_22.lineEdit().setText(tab6[6])
+        self.combo_aufgaben_22_01.lineEdit().setText(tab6[4])
+        self.combo_kostform_22.lineEdit().setText(tab6[5])
         
         ##
         # tab7
@@ -2714,9 +2661,10 @@ class MainWindow(QMainWindow):
         item.setText(tab7[2])
         item = self.table1.item(7, 3)
         item.setText(tab7[3])
-        item = self.table1.item(7, 4)
-        item.setText(tab7[4])
-        self.combo_aufgaben_22_02.lineEdit().setText(tab7[5])
+        self.combo_aufgaben_22_02.lineEdit().setText(tab7[4])
+        item = self.table1.item(7, 5)
+        item.setText(tab7[5])
+        
         ##
         # tab8
         ##
@@ -2740,11 +2688,9 @@ class MainWindow(QMainWindow):
         self.combo_abteilung_3.lineEdit().setText(tab9[1])
         self.combo_pflege_3.lineEdit().setText(tab9[2])
         self.combo_arzt_3.lineEdit().setText(tab9[3])
-        item = self.table1.item(9, 4)
-        item.setText(tab9[4])
-        self.combo_aufgaben_3_01.lineEdit().setText(tab9[5])
-        self.combo_kostform_3.lineEdit().setText(tab9[6])
-        
+        self.combo_aufgaben_3_01.lineEdit().setText(tab9[4])
+        self.combo_kostform_3.lineEdit().setText(tab9[5])
+  
         ##
         # tab10
         ##
@@ -2755,9 +2701,10 @@ class MainWindow(QMainWindow):
         item.setText(tab10[2])
         item = self.table1.item(10, 3)
         item.setText(tab10[3])
-        item = self.table1.item(10, 4)
-        item.setText(tab10[4])
-        self.combo_aufgaben_3_02.lineEdit().setText(tab10[5])
+        self.combo_aufgaben_3_02.lineEdit().setText(tab10[4])
+        item = self.table1.item(10, 5)
+        item.setText(tab10[5])
+        
         ##
         # tab11
         ##
@@ -2781,10 +2728,8 @@ class MainWindow(QMainWindow):
         self.combo_abteilung_41.lineEdit().setText(tab12[1])
         self.combo_pflege_41.lineEdit().setText(tab12[2])
         self.combo_arzt_41.lineEdit().setText(tab12[3])
-        item = self.table1.item(12, 4)
-        item.setText(tab12[4])
-        self.combo_aufgaben_41_01.lineEdit().setText(tab12[5])
-        self.combo_kostform_41.lineEdit().setText(tab12[6])
+        self.combo_aufgaben_41_01.lineEdit().setText(tab12[4])
+        self.combo_kostform_41.lineEdit().setText(tab12[5])
         
         ##
         # tab13
@@ -2796,9 +2741,10 @@ class MainWindow(QMainWindow):
         item.setText(tab13[2])
         item = self.table1.item(13, 3)
         item.setText(tab13[3])
-        item = self.table1.item(13, 4)
-        item.setText(tab13[4])
-        self.combo_aufgaben_41_02.lineEdit().setText(tab13[5])
+        self.combo_aufgaben_41_02.lineEdit().setText(tab13[4])
+        item = self.table1.item(13, 5)
+        item.setText(tab13[5])
+        
         ##
         # tab14
         ##
@@ -2822,10 +2768,8 @@ class MainWindow(QMainWindow):
         self.combo_abteilung_42.lineEdit().setText(tab15[1])
         self.combo_pflege_42.lineEdit().setText(tab15[2])
         self.combo_arzt_42.lineEdit().setText(tab15[3])
-        item = self.table1.item(15, 4)
-        item.setText(tab15[4])
-        self.combo_aufgaben_42_01.lineEdit().setText(tab15[5])
-        self.combo_kostform_42.lineEdit().setText(tab15[6])
+        self.combo_aufgaben_42_01.lineEdit().setText(tab15[4])
+        self.combo_kostform_42.lineEdit().setText(tab15[5])
         
         ##
         # tab16
@@ -2837,9 +2781,10 @@ class MainWindow(QMainWindow):
         item.setText(tab16[2])
         item = self.table1.item(16, 3)
         item.setText(tab16[3])
-        item = self.table1.item(16, 4)
-        item.setText(tab16[4])
-        self.combo_aufgaben_42_02.lineEdit().setText(tab16[5])
+        self.combo_aufgaben_42_02.lineEdit().setText(tab16[4])
+        item = self.table1.item(16, 5)
+        item.setText(tab16[5])
+        
         ##
         # tab17
         ##
@@ -2863,10 +2808,8 @@ class MainWindow(QMainWindow):
         self.combo_abteilung_5.lineEdit().setText(tab18[1])
         self.combo_pflege_5.lineEdit().setText(tab18[2])
         self.combo_arzt_5.lineEdit().setText(tab18[3])
-        item = self.table1.item(18, 4)
-        item.setText(tab18[4])
-        self.combo_aufgaben_5_01.lineEdit().setText(tab18[5])
-        self.combo_kostform_5.lineEdit().setText(tab18[6])
+        self.combo_aufgaben_5_01.lineEdit().setText(tab18[4])
+        self.combo_kostform_5.lineEdit().setText(tab18[5])
         
         ##
         # tab19
@@ -2878,9 +2821,10 @@ class MainWindow(QMainWindow):
         item.setText(tab19[2])
         item = self.table1.item(19, 3)
         item.setText(tab19[3])
-        item = self.table1.item(19, 4)
-        item.setText(tab19[4])
-        self.combo_aufgaben_5_02.lineEdit().setText(tab19[5])
+        self.combo_aufgaben_5_02.lineEdit().setText(tab19[4])
+        item = self.table1.item(19, 5)
+        item.setText(tab19[5])
+        
         ##
         # tab20
         ##
@@ -2904,10 +2848,8 @@ class MainWindow(QMainWindow):
         self.combo_abteilung_6.lineEdit().setText(tab21[1])
         self.combo_pflege_6.lineEdit().setText(tab21[2])
         self.combo_arzt_6.lineEdit().setText(tab21[3])
-        item = self.table1.item(21, 4)
-        item.setText(tab21[4])
-        self.combo_aufgaben_6_01.lineEdit().setText(tab21[5])
-        self.combo_kostform_6.lineEdit().setText(tab21[6])
+        self.combo_aufgaben_6_01.lineEdit().setText(tab21[4])
+        self.combo_kostform_6.lineEdit().setText(tab21[5])
         
         ##
         # tab22
@@ -2919,9 +2861,10 @@ class MainWindow(QMainWindow):
         item.setText(tab22[2])
         item = self.table1.item(22, 3)
         item.setText(tab22[3])
-        item = self.table1.item(22, 4)
-        item.setText(tab22[4])
-        self.combo_aufgaben_6_02.lineEdit().setText(tab22[5])
+        self.combo_aufgaben_6_02.lineEdit().setText(tab22[4])
+        item = self.table1.item(22, 5)
+        item.setText(tab22[5])
+        
         ##
         # tab23
         ##
